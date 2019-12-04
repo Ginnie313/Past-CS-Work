@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="view.css">
+</head>
+
+
+<body>
+
+  <header class="topnav">
+    <a class="active" href="home.html"> Home </a>
+    <input type="search" placeholder="Search Majors...">
+    <button type="submit">Search</button>
+  </header>
+
+<hr>
+
+<h1>Information about {{ specific_major.major }}</h1>
+<table>
+  <tr><th><del>Datum</del></th><th>Value</th></tr>
+  {% for param in parametersList %}
+    <tr><td>{{ param}} </td><td> {{ specific_major.param}} </td><tr>
+  {% endfor %}
+</table>
+
+
+</body>
+</html>

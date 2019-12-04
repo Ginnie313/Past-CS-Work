@@ -1,0 +1,18 @@
+Group members:
+  Daniel Kleber and Ginnie White
+  Daniel's Perlman repository has the database in it (majorsInformation)
+
+The files for Phase3 and what they are:
+
+  MajorsDatabase.sql--a file that we created to contain all the SQL needed to
+  make the database from our original CSV file
+
+  api.py--File that contains the actual API and SQL methods to get info from our
+  database. Note, this file has some wrapper methods that aren't fully implemented.
+  We just have them in as placeholders so we can figure out how to implement the
+  JavaScript code later.
+
+  api_tests.py--File that contains all the the tests we wrote for the implemented
+  methods of api.py
+
+  config.py--Passes in a database name and user name to api.py for security

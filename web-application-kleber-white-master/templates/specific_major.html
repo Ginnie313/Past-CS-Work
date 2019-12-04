@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='view.css') }}">
+</head>
+
+
+<body>
+  <header class="topnav">
+    <a class="active" href="{{ url_for('homePage') }}"> Home </a>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <a class ="active" href = "{{ url_for('allMajors')}}"> All Majors </a>
+    <form class="topnav search" action="{{ url_for('majorNameCall') }}">
+        <input type="search" name="major_title" placeholder="Search Majors...">
+        <button type="submit">Search</button>
+    </form>
+  </header>
+<hr>
+
+<h1>Information about {{ specific_major.major }}</h1>
+<table class="center">
+  <tr><th>Parameter</th><th>Value</th></tr>
+  {% for param in parametersList %}
+    <tr><td>{{ param }} </td><td> {{ specific_major[param] }} </td><tr>
+  {% endfor %}
+</table>
+
+<br><br>
+<div display:inline-block>
+<button type="button" name="Basic Search Button">
+<a href="{{ url_for('homePage') }}"> Basic Search </a>
+</button>
+<button type="button" name="Advanced Search Button">
+<a href="{{ url_for('advancedSearchPage') }}"> Advanced Search </a>
+</button>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="view.css">
+</head>
+
+
+<body>
+
+  <header class="topnav">
+    <a class="active" href="home.html"> Home </a>
+      <input type="search" placeholder="Search Majors...">
+      <button onclick= "headerSearch()" name="major_search">Search</button>
+      <script>
+      function headerSearch(){
+        
+      }
+      </script>
+  </header>
+
+<hr>
+
+<h1>Major Information by Category</h1>
+
+
+<form class="main" action="#/search">
+  Major Category:<br>
+  <select name="Category">
+    <option value=" "></option>
+    <option value="Agriculture & Natural Resources">Agriculture & Natural Resources</option>
+    <option value="Arts">Arts</option>
+    <option value="Biology & Life Science">Biology & Life Science</option>
+    <option value="Business">Business</option>
+    <option value="Communications & Journalism">Communications & Journalism</option>
+    <option value="Computers & Mathematics">Computers & Mathematics</option>
+    <option value="Education">Education</option>
+    <option value="Engineering">Engineering</option>
+    <option value="Health">Health</option>
+    <option value="Humanities & Liberal Arts">Humanities & Liberal Arts</option>
+    <option value="Industrial Arts & Consumer Services">Industrial Arts & Consumer Services</option>
+    <option value="Law & Public Policy">Law & Public Policy</option>
+    <option value="Interdisciplinary">Interdisciplinary</option>
+    <option value="Physical Sciences">Physical Sciences</option>
+    <option value="Psychology & Social Work">Psychology & Social Work</option>
+  </select>
+  <br><br>
+  Sort By:<br>
+  <select name="Sort By">
+    <option value="Unemployment Rate">Unemployment Rate</option>
+    <option value="Median Income">Median Income</option>
+  </select>
+  <br><br>
+  <button type="submit" name="general_search">Submit</button>
+  <br><br>
+</form>
+
+<br><br>
+
+<button type="button" name="Advanced Search Button">
+<a href="advanced_search.html"> Advanced Search </a>
+</button>
+
+
+</body>
+</html>

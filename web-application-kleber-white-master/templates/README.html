@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='view.css') }}">
+</head>
+
+
+<body>
+  <header class="topnav">
+    <a class="active" href="{{ url_for('homePage') }}"> Home </a>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <a class ="active" href = "{{ url_for('allMajors')}}"> All Majors </a>
+    <form class="topnav search" action="{{ url_for('majorNameCall') }}">
+        <input type="search" name="major_title" placeholder="Search Majors...">
+        <button type="submit">Search</button>
+    </form>
+  </header>
+<hr>
+
+<h1>Read Me</h1>
+
+<h2> Project Description </h2>
+<p>
+Our project outputs information about college majors given user requests. This web app is aimed
+at people deciding between different majors (i.e, high school students or college students)
+who would like additional economic information to inform their decision.
+
+As of the time of submission, we are unaware of any major bugs in the project.
+
+</article>
+</p>
+
+<h2> Project Features </h2>
+<p>
+This web app will allow you to view all information for one specific major, view information for all majors at
+once, and has two search options. Basic search lets you list all majors in a category of your choice, sorted by
+either unemployment rate or median income. Advanced search additionally let you filter the results by up to 6 more
+parameters, and allows you to sort by any parameter in either direction.
+</p>
+
+<h2>Citation</h2>
+
+<p>All data provided by the
+  <a href="https://github.com/fivethirtyeight/data/blob/master/college-majors/recent-grads.csv">"recent_grads.csv"</a>
+  data set from 538 under
+  <a href = "https://github.com/fivethirtyeight/data/blob/master/LICENSE"> Creative Commons Attribution 4.0 International</a>.
+  Information about "recent_grads.csv" and its contents can be found at
+  <a href = "https://github.com/fivethirtyeight/data/blob/master/college-majors/readme.md"> this link</a>.
+  </p>
+
+<h2> Feature We Wish We Had Time For </h2>
+<p>
+We could have a page that lays out all of the majors on a line to represent the spectrum of a value
+(ex, median income) but we didn't have time to implement this.
+</p>
+
+<h2> Description of Importing Data </h2>
+<p>
+To get the data into the database, we wrote an SQL file called MajorsDatabase and then copy-pasted
+it in chunks to Perlman. You can find the MajorsData.sql file in our GitHub repo with that exact name.
+</p>
+
+</body>
+
+
+</html>

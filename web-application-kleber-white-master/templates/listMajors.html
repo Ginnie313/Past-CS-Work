@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='view.css') }}">
+</head>
+
+
+<body>
+  <header class="topnav">
+    <a class="active" href="{{ url_for('homePage') }}"> Home </a>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <a class ="active" href = "{{ url_for('allMajors')}}"> All Majors </a>
+    <form class="topnav search" action="{{ url_for('majorNameCall') }}">
+        <input type="search" name="major_title" placeholder="Search Majors...">
+        <button type="submit">Search</button>
+    </form>
+  </header>
+<hr>
+
+<h1>Majors Information</h1>
+<table class="center">
+  <tr><th>Major Name</th><th>Rank</th><th>Portion Identifying as Female</th><th>Unemployment Rate</th>
+    <th>Median Income</th><th>25th Percentile Income</th><th>75th Percentile Income</th></tr>
+  {% for major in majorsList %}
+    <tr><td> <a href="{{ url_for('majorNameCall', major_title=major.major) }}">{{ major.major }}</a> </td><td> {{ major.rank}} </td> <td> {{ major.sharewomen}} </td>
+      <td> {{ major.unemployment_rate}} </td> <td> {{ major.median}} </td> <td> {{ major.p25th}} </td>
+      <td> {{ major.p75th}} </td>
+      <tr>
+  {% endfor %}
+</table>
+
+<br>
+<div display:inline-block>
+<button type="button" name="Basic Search Button">
+<a href="{{ url_for('homePage') }}"> Basic Search </a>
+</button>
+<button type="button" name="Advanced Search Button">
+<a href="{{ url_for('advancedSearchPage') }}"> Advanced Search </a>
+</button>
+</div>
+
+</body>
+</html>

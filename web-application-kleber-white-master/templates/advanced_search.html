@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='view.css') }}">
+</head>
+
+
+<body>
+  <header class="topnav">
+    <a class="active" href="{{ url_for('homePage') }}"> Home </a>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <a class ="active" href = "{{ url_for('allMajors')}}"> All Majors </a>
+    <form class="topnav search" action="{{ url_for('majorNameCall') }}">
+        <input type="search" name="major_title" placeholder="Search Majors...">
+        <button type="submit">Search</button>
+    </form>
+  </header>
+<hr>
+
+<h1>Advanced Search</h1>
+
+
+<form class="main" action="{{ url_for('searchRunner') }}">
+  Major Category:<br>
+  <select name="Category">
+    <option value=" "></option>
+    <option value="Agriculture & Natural Resources">Agriculture & Natural Resources</option>
+    <option value="Arts">Arts</option>
+    <option value="Biology & Life Science">Biology & Life Science</option>
+    <option value="Business">Business</option>
+    <option value="Communications & Journalism">Communications & Journalism</option>
+    <option value="Computers & Mathematics">Computers & Mathematics</option>
+    <option value="Education">Education</option>
+    <option value="Engineering">Engineering</option>
+    <option value="Health">Health</option>
+    <option value="Humanities & Liberal Arts">Humanities & Liberal Arts</option>
+    <option value="Industrial Arts & Consumer Services">Industrial Arts & Consumer Services</option>
+    <option value="Law & Public Policy">Law & Public Policy</option>
+    <option value="Interdisciplinary">Interdisciplinary</option>
+    <option value="Physical Sciences">Physical Sciences</option>
+    <option value="Psychology & Social Work">Psychology & Social Work</option>
+  </select>
+  <br><br>
+  Filter By:<br>
+  <div display:inline-block>
+    <select name="Criterion1">
+      <option value=" "></option>
+      <option value="rank">Rank</option>
+      <option value="shareWomen">ShareWomen</option>
+      <option value="unemployment_rate">Unemployment Rate</option>
+      <option value="median">Median Income</option>
+      <option value="p25th">25th Percentile of Income</option>
+      <option value="p75th">75th Percentile of Income</option>
+    </select>
+    <select name="Comparison1">
+      <option value=" "></option>
+      <option value=">"> > </option>
+      <option value="<"> < </option>
+      <option value="="> = </option>
+    </select>
+    <input type="number" step="any" name = "Value1" placeholder="Input search value here">
+  </div>
+    <br>
+    <div display:inline-block>
+      <select name="Criterion2">
+        <option value=" "></option>
+        <option value="rank">Rank</option>
+        <option value="shareWomen">ShareWomen</option>
+        <option value="unemployment_rate">Unemployment Rate</option>
+        <option value="median">Median Income</option>
+        <option value="p25th">25th Percentile of Income</option>
+        <option value="p75th">75th Percentile of Income</option>
+      </select>
+      <select name="Comparison2">
+        <option value=" "></option>
+        <option value=">"> > </option>
+        <option value="<"> < </option>
+        <option value="="> = </option>
+      </select>
+      <input type="number" step="0.001" name = "Value2" placeholder="Input search value here">
+    </div>
+    <br>
+    <div display:inline-block>
+      <select name="Criterion3">
+        <option value=" "></option>
+        <option value="rank">Rank</option>
+        <option value="shareWomen">ShareWomen</option>
+        <option value="unemployment_rate">Unemployment Rate</option>
+        <option value="median">Median Income</option>
+        <option value="p25th">25th Percentile of Income</option>
+        <option value="p75th">75th Percentile of Income</option>
+      </select>
+      <select name="Comparison3">
+        <option value=" "></option>
+        <option value=">"> > </option>
+        <option value="<"> < </option>
+        <option value="="> = </option>
+      </select>
+      <input type="number" step="0.001" name = "Value3" placeholder="Input search value here">
+    </div>
+    <br>
+    <div display:inline-block>
+      <select name="Criterion4">
+        <option value=" "></option>
+        <option value="rank">Rank</option>
+        <option value="shareWomen">ShareWomen</option>
+        <option value="unemployment_rate">Unemployment Rate</option>
+        <option value="median">Median Income</option>
+        <option value="p25th">25th Percentile of Income</option>
+        <option value="p75th">75th Percentile of Income</option>
+      </select>
+      <select name="Comparison4">
+        <option value=" "></option>
+        <option value=">"> > </option>
+        <option value="<"> < </option>
+        <option value="="> = </option>
+      </select>
+      <input type="number" step="0.001" name = "Value4" placeholder="Input search value here">
+    </div>
+    <br>
+    <div display:inline-block>
+      <select name="Criterion5">
+        <option value=" "></option>
+        <option value="rank">Rank</option>
+        <option value="shareWomen">ShareWomen</option>
+        <option value="unemployment_rate">Unemployment Rate</option>
+        <option value="median">Median Income</option>
+        <option value="p25th">25th Percentile of Income</option>
+        <option value="p75th">75th Percentile of Income</option>
+      </select>
+      <select name="Comparison5">
+        <option value=" "></option>
+        <option value=">"> > </option>
+        <option value="<"> < </option>
+        <option value="="> = </option>
+      </select>
+      <input type="number" step="0.001" name = "Value5" placeholder="Input search value here">
+    </div>
+    <br>
+    <div display:inline-block>
+      <select name="Criterion6">
+        <option value=" "></option>
+        <option value="rank">Rank</option>
+        <option value="shareWomen">ShareWomen</option>
+        <option value="unemployment_rate">Unemployment Rate</option>
+        <option value="median">Median Income</option>
+        <option value="p25th">25th Percentile of Income</option>
+        <option value="p75th">75th Percentile of Income</option>
+      </select>
+      <select name="Comparison6">
+        <option value=" "></option>
+        <option value=">"> > </option>
+        <option value="<"> < </option>
+        <option value="="> = </option>
+      </select>
+      <input type="number" step="0.001" name = "Value6" placeholder="Input search value here">
+    </div>
+    <br>
+    <div display:inline-block>
+    Sort By:<br>
+    <select name="SortBy1">
+      <option value=" "></option>
+      <option value="rank">Rank</option>
+      <option value="shareWomen">ShareWomen</option>
+      <option value="unemployment_rate">Unemployment Rate</option>
+      <option value="median">Median Income</option>
+      <option value="p25th">25th Percentile of Income</option>
+      <option value="p75th">75th Percentile of Income</option>
+    </select>
+    <select name="Order1">
+      <option value="ASC">Ascending Order</option>
+      <option value="DESC">Descending Order</option>
+    </select>
+    </div>
+    <br>
+    <div display:inline-block>
+    <select name="SortBy2">
+      <option value=" "></option>
+      <option value="rank">Rank</option>
+      <option value="shareWomen">ShareWomen</option>
+      <option value="unemployment_rate">Unemployment Rate</option>
+      <option value="median">Median Income</option>
+      <option value="p25th">25th Percentile of Income</option>
+      <option value="p75th">75th Percentile of Income</option>
+    </select>
+    <select name="Order2">
+      <option value="ASC">Ascending Order</option>
+      <option value="DESC">Descending Order</option>
+    </select>
+    </div>
+    <br>
+    <input type="submit" value="Submit">
+  </div>
+</form>
+
+<br><br>
+
+<button type="button" name="Basic Search Button">
+<a href="{{ url_for('homePage') }}"> Basic Search </a>
+</button>
+
+</body>
+</html>
