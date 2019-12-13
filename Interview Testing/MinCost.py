@@ -6,6 +6,8 @@ The basic idea here is to gradually fill out the array of lowest possible costs,
 then grab the value at the point (m,n). We fill out the first row and column and
 then build the rest of the matrix from there.
 
+Currently fails the 2x2 or empty matrix edge cases
+
 Algorithm ideas taken from geeksforgeeks for studying help. Done purely as practice
 for interviews, not for class.
 '''
